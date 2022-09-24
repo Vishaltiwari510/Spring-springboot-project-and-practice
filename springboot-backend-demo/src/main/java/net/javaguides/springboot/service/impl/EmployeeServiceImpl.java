@@ -30,57 +30,46 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 
 
-
+//POST
 	@Override
-	public Employee saveEmployee(Employee employee) {
-		
+	public Employee saveEmployee(Employee employee) {		
 		return employeerepository.save(employee);
 	}
-
-
-
-
-
+//GET
 	@Override
 	public List<Employee> getAllEmployee() {
 		
 		return employeerepository.findAll();
 	}
-
-
-
-
-
+//GET By Id
 	@Override
 	public Optional<Employee> getEmployeeById(long id) {
-//		 Optional<Employee> employee = employeerepository.findById(id);
-	
 	if(employeerepository.existsById(id)) {
 		return employeerepository.findById(id);
 	}
-	
-	
 	else {
 		return null;
 	}
 	}
-
-
+//Delete
+	@Override
+	public boolean deleteEmployee(long id) {		
+		if(employeerepository.existsById(id)) {
+			employeerepository.deleteById(id);
+			return true;
+		}
+		return false;	 		
+	}
 
 
 
 	@Override
-	public Employee UpdateEmployee(Employee employee, long id) {
-		
-		//check whether employee with given id exist or not
+	public Employee UpdateEmployee(Employee employee, long id) {	
 		Employee existingEmployee = employeerepository.findById(id).orElseThrow(
-				()-> new ResourceNotFoundException("Employee", "id", id));
-		
+				()-> new ResourceNotFoundException("Employee", "id", id));	
      existingEmployee.setFirstName(employee.getFirstName());
      existingEmployee.setLastName(employee.getLastName());
 	existingEmployee.setEmail(employee.getEmail());
-	//save existing employee in database
-	
 	employeerepository.save(existingEmployee);
 	
 	return existingEmployee;
@@ -91,23 +80,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 
 
-	@Override
-	public boolean deleteEmployee(long id) {
-		
-//		//check whether employee exist in a database or not
-//		employeerepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Employee", "id", id));
-//		
-//		employeerepository.deleteById(id);
-		
-		if(employeerepository.existsById(id)) {
-			employeerepository.deleteById(id);
-			return true;
-		}
-		return false;	 
-		
 	
-		
-	}
 	
 	
 	

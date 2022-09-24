@@ -37,23 +37,20 @@ public class EmployeeController {
 	public ResponseEntity<Employee> saveEmployee(@RequestBody  Employee employee){
 		Employee addedEmployee =  employeeservice.saveEmployee(employee);
 		if(addedEmployee.getEmail().isEmpty() || addedEmployee.getFirstName().isEmpty() || addedEmployee.getLastName().isEmpty()) {
-			return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);
-			
+			return new ResponseEntity<Employee>(HttpStatus.BAD_REQUEST);			
 		}
 		else {
 			return new ResponseEntity<Employee>(addedEmployee, HttpStatus.CREATED);
 		}
 		//return new ResponseEntity<Employee>(, HttpStatus.CREATED);
-	}
-	
+	}	
 	//built get all employee REST  Api
 	@GetMapping("/view")
 	public ResponseEntity<List<Employee>>  getAllEmployee(){
 //		return employeeservice.getAllEmployee();\
 		List<Employee> allEmployee = employeeservice.getAllEmployee();
 		if(allEmployee!=null) {
-			return new ResponseEntity<List<Employee>>(allEmployee, HttpStatus.OK);
-			
+			return new ResponseEntity<List<Employee>>(allEmployee, HttpStatus.OK);			
 		}
 		else {
 			return new ResponseEntity<List<Employee>>(HttpStatus.NOT_FOUND);
@@ -66,31 +63,24 @@ public class EmployeeController {
 	public ResponseEntity<Optional<Employee>> getEmployeeById(@PathVariable("id") long empid){
 		Optional<Employee> employeeById = employeeservice.getEmployeeById(empid);
 		if(employeeById!=null) {
-			return new ResponseEntity<Optional<Employee>>(employeeById, HttpStatus.OK);
-			
+			return new ResponseEntity<Optional<Employee>>(employeeById, HttpStatus.OK);			
 		}
 		else {
 			return new ResponseEntity<Optional<Employee>>(HttpStatus.NOT_FOUND);
-		}
-		
+		}		
 	}
 	
 	
 	//build update employee rest api
 	@PutMapping("update/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable("id") long id, @RequestBody Employee employee){
-		
-		
 		return new ResponseEntity<Employee>(employeeservice.UpdateEmployee(employee, id), HttpStatus.OK);
-	}
-	
+	}	
 	
 	//build rest api for deleting 
 	@DeleteMapping("delete/{id}")
-	public ResponseEntity<String> deleteEmployee(@PathVariable("id") long id){
-		
-		if(this.employeeservice.deleteEmployee(id)) {
-		
+	public ResponseEntity<String> deleteEmployee(@PathVariable("id") long id){		
+		if(this.employeeservice.deleteEmployee(id)) {	
 		return new ResponseEntity<String>("deleted succesfully", HttpStatus.OK);
 		}
 		else {

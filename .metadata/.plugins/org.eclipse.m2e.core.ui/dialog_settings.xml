@@ -26,15 +26,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.stackroute.spring.demo.springdemo2"/>
-			<item value="com.stackroute.spring.demo.springdemo1"/>
+			<item value="com.springcore.di.springDI1"/>
 		</list>
 		<list key="groupId">
-			<item value="com.stackroute.spring.demo"/>
+			<item value="com.springcore.di"/>
 		</list>
 		<list key="artifactId">
-			<item value="springdemo2"/>
-			<item value="springdemo1"/>
+			<item value="springDI1"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

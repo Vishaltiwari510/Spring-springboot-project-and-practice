@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	
+	
+	<!-- this is beans -->
+	<bean class="com.springcore.di.springDI1.Student" name="student1">
+	
+	<property name="id">
+	<value>101</value>
+	</property>
+	
+	<property name="name">
+	<value>Vishal</value>
+	</property>
+	
+	
+	
+	<property name="address">
+	<value>delhi</value>
+	</property>
+
+
+	</bean>
+	
+		<!-- using value as attribute not as tag can also be done unlike above where value is tag -->
+	<bean class="com.springcore.di.springDI1.Student" name="student2">
+	<property name="id" value="102" />
+	<property name="name" value="john" />
+	<property name="address" value="uk" />
+	</bean>
+	
+	
+	
+	
+	<!-- Creating bean using p schema -->
+	<bean class="com.springcore.di.springDI1.Student" name="student3" p:id="103" p:name="alen" p:address="usa" />
+	
+	<context:annotation-config/>  
+</beans>
