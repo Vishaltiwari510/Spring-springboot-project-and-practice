@@ -2023,3 +2023,5 @@
 2022-09-24 23:06:14,149 [Worker-100: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\tiwar\Desktop\Spring-Springboot-project-and-Practice\springDI1\src\test\resources
 2022-09-24 23:10:06,393 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-09-24 23:10:06,393 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\tiwar\Desktop\Spring-Springboot-project-and-Practice\springDI1\src\main\resources
+2022-09-24 23:10:06,395 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-09-24 23:10:06,395 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\tiwar\Desktop\Spring-Springboot-project-and-Practice\springDI1\src\test\resources
